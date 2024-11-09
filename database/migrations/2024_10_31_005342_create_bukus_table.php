@@ -19,8 +19,7 @@ return new class extends Migration
         $table->string('author');
         $table->string('publisher');
         $table->year('publication_year');
-        $table->integer('pages');
-        $table->text('description');
+        $table->string('description');
     });
 }
 

@@ -11,18 +11,16 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('bukus', function (Blueprint $table) {
+        Schema::create('cds', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('author');
-            $table->string('publisher');
-            $table->year('publication_year');
-            $table->integer('pages');
+            $table->string('title'); // Judul CD
+            $table->string('artist'); // Nama artis atau band
+            $table->date('release_date')->nullable(); // Tanggal rilis
+            $table->string('genre')->nullable(); // Genre musik
         });
     }
-    
 
     /**
      * Reverse the migrations.
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jurnals');
+        Schema::dropIfExists('cds');
     }
 };
